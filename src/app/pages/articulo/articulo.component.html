@@ -1,5 +1,6 @@
 <section *ngIf="articulo">
-  <header class="rk-portfolio-cover  item-inside-1">
+  <header [ngStyle]="{'background-image': 'url(assets/productos/'+id+'/main.jpg)'}"
+  class="rk-portfolio-cover item-inside-1">
     <div class="item-inside__meta">
       <h1 class="ae-u-bolder rk-portfolio-title ">{{articulo.producto}}</h1>
       <p class="ae-theta rk-portfolio-category ">{{articulo.categoria}}</p>
@@ -22,17 +23,20 @@
       <div class="ae-grid__item item-lg-5 au-lg-ptp-1">
         <h4 class="ae-u-bolder">{{articulo.producto}}</h4>
         <p class="ae-eta">{{articulo.desc1}}</p>
-        <p class="ae-eta">{{articulo.desc2}}</p>
       </div>
-      <div class="ae-grid__item item-lg-6 item-lg--offset-1"><img src="assets/productos/{{id}}/pic-1.jpg" alt="Urku Portfolio"></div>
+      <div class="ae-grid__item item-lg-6 item-lg--offset-1"><img src="assets/productos/{{id}}/pic-1.jpg" alt="Urku Portfolio">
+      </div>
     </div>
     <div class="ae-grid ae-grid--collapse">
-      <div class="ae-grid__item item-lg-8"><img src="assets/productos/{{id}}/pic-2.jpg" alt="Urku Portfolio"></div>
-      <!-- <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <p class="au-mb-3">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit <br>in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-        <p class="ae-u-bolder">Right Box Small Text</p>
-      </div> -->
+      <div class="ae-grid__item item-lg-8"><img src="assets/productos/{{id}}/pic-2.jpg" alt="Urku Portfolio">
+        <!-- <p class="ae-eta">{{articulo.desc2}}</p> -->
+      </div>
+      <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> -->
+        <!-- <p class="au-mb-3">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit <br>in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p> -->
+        <p class="au-mb-3">{{articulo.desc2}}</p>
+        <!-- <p class="ae-u-bolder">Right Box Small Text</p> -->
+      </div>
     </div>
     <div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1">
       <div class="ae-grid__item item-lg-8 item-lg--offset-2">

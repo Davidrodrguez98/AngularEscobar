@@ -60,8 +60,9 @@
     <!-- [class.item-1]="articulo.url === 'project-1'" -->
     <div *ngIf="!articulosService.cargando" class="rk-portfolio__items">
       <a *ngFor="let articulo of articulosService.articulos" 
+      [ngStyle]="{'background-image': 'url(assets/productos/'+articulo.url+'.jpg)'}"
       [routerLink]="['/articulo', articulo.cod]"
-      class="rk-item rk-item--flex rk-size-4 rk-tosize-3 rk-square {{articulo.url}}">
+      class="rk-item rk-item--flex rk-size-4 rk-tosize-3 rk-square">
          <!-- <style>
           .item-imagen{
             --imagen: articulo.url;

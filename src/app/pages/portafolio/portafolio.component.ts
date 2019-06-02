@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticulosService } from '../../services/articulos.service';
+import { ActivatedRoute } from '@angular/router';
+import { ArticuloDescripcion } from '../../interfaces/articulo-descripcion.interface';
 
 @Component({
   selector: 'app-portafolio',
@@ -8,9 +10,20 @@ import { ArticulosService } from '../../services/articulos.service';
 })
 export class PortafolioComponent implements OnInit {
 
-  constructor( public articulosService: ArticulosService) { }
+  articulo: ArticuloDescripcion;
+  id: string;
+
+  constructor( private route: ActivatedRoute, public articulosService: ArticulosService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(parametros => {
+      console.log(parametros);
+      this.articulosService.getArticulo(parametros['id'])
+      .subscribe( (articulo: ArticuloDescripcion) => {
+        this.articulo = articulo;
+        this.id=parametros['id'];
+      });
+    });
   }
 
 }
