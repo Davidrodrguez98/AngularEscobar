@@ -1,0 +1,20 @@
+<div class="rk-portfolio__items">
+    <a *ngFor="let articulo of articuloService.articulosFiltrado" 
+    [ngStyle]="{'background-image': 'url(assets/productos/'+articulo.url+'.jpg)'}"
+    [routerLink]="['/articulo', articulo.cod]"
+    class="rk-item rk-item--flex rk-size-4 rk-tosize-3 rk-square">
+       <!-- <style>
+        .item-imagen{
+          --imagen: articulo.url;
+          background-image: url(`assets/productos/project-1.jpg`);
+        }
+       </style>  -->
+      <!-- <img src="assets/productos/{{articulo.url}}.jpg" class="au-mb-3" >  -->
+      <div [routerLink]="[]" class="item-meta">
+        <h2>{{articulo.titulo}}</h2>
+        <p>{{articulo.categoria}}</p>
+      </div>
+    </a>
+
+    <!-- <img *ngFor="let articulo of articulosService.articulos" src="assets/productos/{{articulo.url}}.jpg" class="rk-item rk-item--flex rk-size-4 rk-tosize-3 rk-square"> -->
+  </div>

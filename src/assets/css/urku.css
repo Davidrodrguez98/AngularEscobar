@@ -1272,13 +1272,16 @@ body {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
           align-items: flex-end;
-  height: 100vh;
+  height: 70vh;
   padding-bottom: 1.5rem;
+  margin-top: 0%;
+  margin-bottom: 0%;
   width: 100%;
 }
 @media (min-width: 40em) {
   .rk-portfolio-cover {
     padding-bottom: 2.5rem;
+    margin-top: 0%;
   }
 }
 
@@ -1352,7 +1355,7 @@ body {
 .item-inside-1 {
   /* background-image: url("../img/project-1.jpg"); */
   background-position: 50% 100%;
-  background-size: 350%;
+  background-size: 250%;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
   .item-inside-1 {

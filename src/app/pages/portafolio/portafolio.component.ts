@@ -16,14 +16,6 @@ export class PortafolioComponent implements OnInit {
   constructor( private route: ActivatedRoute, public articulosService: ArticulosService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(parametros => {
-      console.log(parametros);
-      this.articulosService.getArticulo(parametros['id'])
-      .subscribe( (articulo: ArticuloDescripcion) => {
-        this.articulo = articulo;
-        this.id=parametros['id'];
-      });
-    });
   }
 
 }
