@@ -19,7 +19,7 @@ export class ArticulosService {
 
     return new Promise( (resolve, reject) => {
         this.http.get('https://angular-escobar.firebaseio.com/articulos_idx.json')
-      .subscribe((resp: Articulo[]) => {
+        .subscribe((resp: Articulo[]) => {
         this.articulos = resp;
         this.cargando = false;
         resolve();
