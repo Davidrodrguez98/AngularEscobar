@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ArticulosService } from '../../services/articulos.service';
+import { ArticuloDescripcion } from '../../interfaces/articulo-descripcion.interface';
 
 @Component({
   selector: 'app-articulo',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticuloComponent implements OnInit {
 
-  constructor() { }
+
+  articulo: ArticuloDescripcion;
+  id: string;
+  constructor(private route: ActivatedRoute, public articuloService: ArticulosService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(parametros => {
+      console.log(parametros['id']);
+      this.articuloService.getArticulo(parametros['id'])
+      .subscribe( (articulo: ArticuloDescripcion) => {
+        this.articulo = articulo;
+        this.id=parametros['id'];
+        console.log(articulo);
+      });
+    });
   }
 
 }

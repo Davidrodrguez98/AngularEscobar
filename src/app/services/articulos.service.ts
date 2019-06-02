@@ -23,4 +23,8 @@ export class ArticulosService {
     });
 
   }
+
+  getArticulo(id: string){
+    return this.http.get(`https://angular-escobar.firebaseio.com/articulos/${id}.json`)
+  }
 }
