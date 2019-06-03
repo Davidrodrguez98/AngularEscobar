@@ -26,23 +26,21 @@ export class ArticulosService {
       });
     });
 
-    
-
   }
 
   getArticulo(id: string){
-    return this.http.get(`https://angular-escobar.firebaseio.com/articulos/${id}.json`)
+    return this.http.get(`https://angular-escobar.firebaseio.com/articulos/${id}.json`);
   }
 
   buscarProducto(busqueda: string){
-    //cargar productos
+    // cargar productos
     if(this.articulos.length == 0){
       this.cargarProductos().then( () => {
         // se ejecuta despues de obtenere los productos
         this.filtrarProductos(busqueda);
       });
-    }else{
-      //aplicar el filtro
+    } else {
+      // aplicar el filtro
       this.filtrarProductos(busqueda);
     }
 
@@ -52,16 +50,17 @@ export class ArticulosService {
     // console.log(this.articulosFiltrado);
   }
 
+  // Para el search
   private filtrarProductos(busqueda: string){
 
     this.articulosFiltrado = [];
-    busqueda=busqueda.toLowerCase();
+    busqueda = busqueda.toLowerCase();
 
     this.articulos.forEach( art => {
-      const titulominusculas=art.titulo.toLowerCase();
-      if(art.categoria.indexOf(busqueda)>=0 || titulominusculas.indexOf(busqueda) >=0){
+      const titulominusculas = art.titulo.toLowerCase();
+      if(art.categoria.indexOf(busqueda) >= 0 || titulominusculas.indexOf(busqueda) >= 0) {
         this.articulosFiltrado.push(art);
       }
-    })
+    });
   }
 }

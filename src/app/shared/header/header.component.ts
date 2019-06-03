@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   }
 
   buscarArticulo(busqueda: string){
-    if(busqueda.length < 1){
+    if (busqueda.length < 1) {
       return;
     }
 

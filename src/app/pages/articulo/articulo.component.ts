@@ -17,12 +17,10 @@ export class ArticuloComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(parametros => {
-      console.log(parametros['id']);
       this.articuloService.getArticulo(parametros['id'])
       .subscribe( (articulo: ArticuloDescripcion) => {
         this.articulo = articulo;
-        this.id=parametros['id'];
-        console.log(articulo);
+        this.id = parametros['id'];
       });
     });
   }
