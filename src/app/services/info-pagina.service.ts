@@ -9,7 +9,7 @@ export class InfoPaginaService {
 
   info: InfoPagina = {};
   cargada = false;
-  equipocargado = false;
+  equipocargando = true;
   equipo: any[] = [];
 
   constructor( private http: HttpClient) {
@@ -33,7 +33,7 @@ export class InfoPaginaService {
     // Leer archivo JSON de Base de datos
     this.http.get('https://angular-escobar.firebaseio.com/equipo.json')
     .subscribe((resp: any) => {
-      this.equipocargado = true;
+      this.equipocargando = false;
       this.equipo = resp;
     });
 

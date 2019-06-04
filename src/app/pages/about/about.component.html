@@ -1,5 +1,5 @@
   <!-- Animacion de cargando -->
-  <div align="center" *ngIf="INFOSERVICE.equipocargado">
+  <div align="center" *ngIf="INFOSERVICE.equipocargando">
       <h2>Cargando</h2>
       <div class="loader loader--style1" title="0">
           <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -21,9 +21,9 @@
         </div>
 
         <p>Espere un momento</p>
-    </div>
+  </div>
   
-<div *ngIf="!INFOSERVICE.equipocargado">
+<div *ngIf="!INFOSERVICE.equipocargando" class="ae-container-fluid ae-container-fluid--inner">
   <div class="ae-grid au-xs-ta-center au-mb-4">
     <div *ngFor="let persona of INFOSERVICE.equipo" class="animated fadeInDown ae-grid__item item-lg-4 ae-kappa au-mb-3">
       <img [src]="persona.imagen" alt="" class="au-mb-3">
@@ -54,9 +54,14 @@
       <p class="au-lh-3">Nemo enim ipsam voluptatem quia voluptas</p>
     </div>
   </div>
-  <p class="au-flex au-pt-4 group-buttons"><a routerLink="home" class="au-mt-4 arrow-button arrow-button--right arrow-button--out">Visita nuestros productos<span class="arrow-cont">
-        <svg>
-          <use xlink:href="assets/img/symbols.svg#arrow"></use>
-        </svg></span></a>
-  </p>
+  <p class="au-flex au-pt-4 group-buttons">
+      <a routerLink="home" class="au-mt-4 arrow-button arrow-button--right arrow-button--out">Visita nuestros productos
+        <span class="arrow-cont">
+          <svg>
+            <use xlink:href="assets/img/symbols.svg#arrow"></use>
+          </svg>
+        </span>
+      </a>
+    </p>
 </div>
+
